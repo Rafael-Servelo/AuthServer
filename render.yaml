@@ -1,0 +1,18 @@
+# Exported from Render on 2024-07-03T22:50:27Z
+services:
+- type: web
+  name: AuthServer
+  runtime: node
+  repo: https://github.com/Rafael-Servelo/AuthServer
+  plan: free
+  envVars:
+  - key: SECRET
+    sync: false
+  - key: DB_PASS
+    sync: false
+  - key: DB_USER
+    sync: false
+  region: oregon
+  buildCommand: npm install
+  startCommand: npm run start
+version: "1"
