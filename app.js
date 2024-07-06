@@ -143,7 +143,13 @@ app.post("/auth/login", async (req, res) => {
       secret
     );
 
-    res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
+    res.status(200).json(
+      {
+        msg: "Autenticação realizada com sucesso!",
+        userID: user.id,
+        token
+      }
+    );
   } catch (error) {
     console.error(error);
   }
