@@ -6,6 +6,20 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
+const allowedDomains = [
+  "https://mimos-da-isa.onrender.com",
+  "http://192.168.18.7:8080",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      const allowed = allowedDomains.includes(origin);
+      callback(null, allowed);
+    },
+  })
+);
+
 // Config Json Response
 app.use(express.json());
 
@@ -143,13 +157,11 @@ app.post("/auth/login", async (req, res) => {
       secret
     );
 
-    res.status(200).json(
-      {
-        msg: "Autenticação realizada com sucesso!",
-        userID: user.id,
-        token
-      }
-    );
+    res.status(200).json({
+      msg: "Autenticação realizada com sucesso!",
+      userID: user.id,
+      token,
+    });
   } catch (error) {
     console.error(error);
   }
