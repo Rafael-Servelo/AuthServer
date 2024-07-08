@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 
 const allowedDomains = [
-  "https://mimos-da-isa.onrender.com",
+  "https://luaminguante.onrender.com",
   "http://192.168.18.7:8080",
 ];
 
