@@ -1,7 +1,7 @@
 {
   "name": "authentication",
   "version": "1.0.0",
-  "description": "",
+  "description": "Serviço de back-end em desenvolvimento, com o conceito de loja online.",
   "main": "index.js",
   "engines": {
     "node": "20"
@@ -11,7 +11,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rafael Servelo",
   "license": "ISC",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
